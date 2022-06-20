@@ -71,6 +71,7 @@ def add_clothes(request):
 def motivation(request):
     current_user = request.user
     try:
+        
      profile = Profile.objects.get(user=current_user)
 
     except Profile.DoesNotExist:
@@ -79,6 +80,29 @@ def motivation(request):
     motivation = Motivation.objects.all
 
     return render(request, 'motivation.html', {"motivation":motivation})
+
+def add_motivation(request):
+    current_user = request.user
+   
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
+
+    if request.method == "POST":
+        form = MotivationForm(request.POST, request.FILES)
+        if form.is_valid():
+            motive = form.save(commit=False)
+            motive.user = current_user
+            motive.save()
+
+        return HttpResponseRedirect('motivation')
+
+    else:
+        form = MotivationForm()
+
+    return render(request, 'ser_motive_add.html', {"form":form})
 
 
 
