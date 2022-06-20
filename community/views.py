@@ -11,4 +11,4 @@ from django.contrib import messages
 from django.urls import reverse
 
 def services(request):
-    return render(request,"Hood/services.html")
+    return render(request,"services.html")
