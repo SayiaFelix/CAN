@@ -24,14 +24,14 @@
 
 <body style="background-color:rgba(244,247,246,.5)"> 
  
-      {% include "navbar.html" %} 
+      {% comment %} {% include "navbar.html" %}  {% endcomment %}
       <br>
       <br>
       <br>
       <br>
       <hr>
       {% block content %}{%endblock%} 
-      {% include "footer.html" %} 
+      {% comment %} {% include "footer.html" %}  {% endcomment %}
 
 
     {% block scripts %}
@@ -42,4 +42,4 @@
       {% endblock %}
 
 </body>
-</html>aa
+</html>
