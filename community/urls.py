@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns=[
     # url('^$',views.homepage, name='homepage'),
     url('services/', views.services, name='services'),
-    url('join/', views.join_hood, name='join_hood'),
+    # url('join/', views.join_hood, name='join_hood'),
    
     # url('information', views.information, name='info'),
     # url('new/info', views.add_info, name = 'add_info'),
