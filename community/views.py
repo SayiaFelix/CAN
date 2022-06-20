@@ -14,7 +14,7 @@ def services(request):
     return render(request,"services.html")
 
 
-def user_profile(request,profile_id):
+def profile(request,profile_id):
      current_user = request.user
      try:
       profile = Profile.objects.get(user=current_user)
