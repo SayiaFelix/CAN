@@ -105,15 +105,18 @@ def add_motivation(request):
     return render(request, 'ser_motive_add.html', {"form":form})
 
 
-
-
-
 def medical(request):
     current_user = request.user
-    profile = Profile.objects.get(user=current_user)
-    healthservices = Medical.objects.filter(neighbourhood=profile.neighbourhood)
+   
+    try:
+     profile = Profile.objects.get(user=current_user)
 
-    return render(request, 'Hood/healthservices.html', {"healthservices":healthservices})
+    except Profile.DoesNotExist:
+      profile = None
+
+    medicalservices = Medical.objects.all
+
+    return render(request, 'medical.html', {"medicalservices":medicalservices})
 
 def fund(request):
     current_user = request.user
