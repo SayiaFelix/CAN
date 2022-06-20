@@ -118,6 +118,29 @@ def medical(request):
 
     return render(request, 'medical.html', {"medicalservices":medicalservices})
 
+def add_medical(request):
+    current_user = request.user
+   
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
+
+    if request.method == "POST":
+        form = MedicalForm(request.POST, request.FILES)
+        if form.is_valid():
+            medical = form.save(commit=False)
+            medical.user = current_user
+            medical.save()
+
+        return HttpResponseRedirect('medical')
+
+    else:
+        form = MedicalForm()
+
+    return render(request, 'ser_medical_add.html', {"form":form})
+
 def fund(request):
     current_user = request.user
     try:
@@ -130,3 +153,25 @@ def fund(request):
 
     return render(request, 'Hood/info.html', {"informations":informations})
 
+def add_medical(request):
+    current_user = request.user
+   
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
+
+    if request.method == "POST":
+        form = MotivationForm(request.POST, request.FILES)
+        if form.is_valid():
+            medical = form.save(commit=False)
+            medical.user = current_user
+            medical.save()
+
+        return HttpResponseRedirect('medical')
+
+    else:
+        form = MotivationForm()
+
+    return render(request, 'ser_medical_add.html', {"form":form})

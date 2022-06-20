@@ -6,7 +6,11 @@ class MotivationForm(forms.ModelForm):
     class Meta:
         model = Motivation
         exclude = ['name']
-        
+
+class MedicalForm(forms.ModelForm):
+    class Meta:
+        model = Medical
+        exclude = ['address']
 
 class ProfileForm(forms.ModelForm):
     class Meta:
