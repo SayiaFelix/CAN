@@ -37,3 +37,28 @@ def update_profile(request):
     else:
         form = ProfileForm()
     return render(request, 'profile/update_profile.html', {"form": form})
+
+def clothes(request):
+  
+    clothes = Cloth.objects.all
+
+    return render(request, 'ser_clothes.html', {"clothes": clothes})
+
+def add_business(request):
+    current_user = request.user
+    profile = Profile.objects.get(user=current_user)
+
+    if request.method == "POST":
+        form = BusinessForm(request.POST, request.FILES)
+        if form.is_valid():
+            business = form.save(commit=False)
+            business.owner = current_user
+            business.neighbourhood = profile.neighbourhood
+            business.save()
+
+        return HttpResponseRedirect('/businesses')
+
+    else:
+        form = BusinessForm()
+
+    return render(request, 'update/update_buss.html', {"form":form})

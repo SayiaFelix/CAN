@@ -22,8 +22,8 @@ urlpatterns=[
     # url('search/', views.search, name = 'search'),
     # url('services', views.services, name='service'),
 
-    # url('businesses', views.businesses, name='business'),
-    # url('add/business', views.add_business, name='add_business'),
+    url('clothes', views.clothes, name='clothes'),
+    url('add/clothes', views.add_clothes, name='add_clothes'),
 
     # url('profile/(\d+)', views.user_profile, name = 'user-profile'),
     # url('update/profile', views.update_profile, name = 'update-profile'),
