@@ -15,6 +15,9 @@ urlpatterns=[
     url('information', views.clothes, name='clothes'),
     url('new/info', views.add_clothes, name = 'add_info'),
 
+    url('motivation', views.motivation, name='motivation'),
+    url('new/motivation', views.add_motivation, name = 'add_motivation'),
+
     # url('post', views.post, name='post'),
     # url('view/blog/(\d+)', views.view_post, name='view_blog'),
     # url('news/post', views.add_post, name='add_post'),

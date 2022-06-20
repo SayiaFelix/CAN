@@ -66,3 +66,40 @@ def add_clothes(request):
         form = ClothForm()
 
     return render(request, 'ser_cloth_add.html', {"form":form})
+
+
+def motivation(request):
+    current_user = request.user
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
+
+    motivation = Motivation.objects.all
+
+    return render(request, 'motivation.html', {"motivation":motivation})
+
+
+
+
+
+def medical(request):
+    current_user = request.user
+    profile = Profile.objects.get(user=current_user)
+    healthservices = Medical.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request, 'Hood/healthservices.html', {"healthservices":healthservices})
+
+def fund(request):
+    current_user = request.user
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
+
+    informations = Motivation.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request, 'Hood/info.html', {"informations":informations})
+
