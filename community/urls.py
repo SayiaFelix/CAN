@@ -8,7 +8,6 @@ urlpatterns=[
   
     url('services/', views.services, name='services'),
   
-
     url('profile/(\d+)', views.profile, name = 'profile'),
     url('update/profile', views.update_profile, name = 'update-profile'),
 
@@ -18,19 +17,11 @@ urlpatterns=[
     url('motivation', views.motivation, name='motivation'),
     url('new/motive', views.add_motivation, name = 'add_motive'),
 
-    # url('post', views.post, name='post'),
-    # url('view/blog/(\d+)', views.view_post, name='view_blog'),
-    # url('news/post', views.add_post, name='add_post'),
-
-    # url('health', views.health, name='health'),
-    # url('search/', views.search, name = 'search'),
-    # url('services', views.services, name='service'),
+    url('add/funds', views.donate_funds, name='donate_funds'),
 
     url('medical', views.medical, name='medicalservices'),
     url('add/health', views.add_medical, name='add_medic'),
 
-    # url('profile/(\d+)', views.user_profile, name = 'user-profile'),
-    # url('update/profile', views.update_profile, name = 'update-profile'),
    
 ]
 

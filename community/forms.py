@@ -12,6 +12,11 @@ class MedicalForm(forms.ModelForm):
         model = Medical
         exclude = ['address']
 
+class FundForm(forms.ModelForm):
+    class Meta:
+        model = Fund
+        exclude = ['address']
+
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile

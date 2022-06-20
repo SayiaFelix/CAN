@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.urls import reverse
 
 def services(request):
-    return render(request,"services.html")
+    return render(request,"service/services.html")
 
 
 def profile(request,profile_id):
@@ -42,7 +42,7 @@ def clothes(request):
   
     clothes = Cloth.objects.all
 
-    return render(request, 'ser_clothes.html', {"clothes": clothes})
+    return render(request, 'service/cloth.html', {"clothes": clothes})
 
 def add_clothes(request):
     current_user = request.user
@@ -65,7 +65,7 @@ def add_clothes(request):
     else:
         form = ClothForm()
 
-    return render(request, 'ser_cloth_add.html', {"form":form})
+    return render(request, 'service/add_cloth.html', {"form":form})
 
 
 def motivation(request):
@@ -79,7 +79,7 @@ def motivation(request):
 
     motivation = Motivation.objects.all
 
-    return render(request, 'motivation.html', {"motivation":motivation})
+    return render(request, 'service/motivation.html', {"motivation":motivation})
 
 def add_motivation(request):
     current_user = request.user
@@ -102,7 +102,7 @@ def add_motivation(request):
     else:
         form = MotivationForm()
 
-    return render(request, 'ser_motive_add.html', {"form":form})
+    return render(request, 'service/add_motivation.html', {"form":form})
 
 
 def medical(request):
@@ -116,7 +116,7 @@ def medical(request):
 
     medicalservices = Medical.objects.all
 
-    return render(request, 'medical.html', {"medicalservices":medicalservices})
+    return render(request, 'service/medical.html', {"medicalservices":medicalservices})
 
 def add_medical(request):
     current_user = request.user
@@ -139,21 +139,9 @@ def add_medical(request):
     else:
         form = MedicalForm()
 
-    return render(request, 'ser_medical_add.html', {"form":form})
+    return render(request, 'service/add_medical.html', {"form":form})
 
-def fund(request):
-    current_user = request.user
-    try:
-     profile = Profile.objects.get(user=current_user)
-
-    except Profile.DoesNotExist:
-      profile = None
-
-    informations = Motivation.objects.filter(neighbourhood=profile.neighbourhood)
-
-    return render(request, 'Hood/info.html', {"informations":informations})
-
-def add_medical(request):
+def donate_funds(request):
     current_user = request.user
    
     try:
@@ -163,15 +151,16 @@ def add_medical(request):
       profile = None
 
     if request.method == "POST":
-        form = MotivationForm(request.POST, request.FILES)
+        form = FundForm(request.POST, request.FILES)
         if form.is_valid():
-            medical = form.save(commit=False)
-            medical.user = current_user
-            medical.save()
+            fund = form.save(commit=False)
+            fund.name = current_user
+            fund.save()
 
-        return HttpResponseRedirect('medical')
+        messages.success(request,f'Thanks for your support.')
+        return HttpResponseRedirect('services')
 
     else:
-        form = MotivationForm()
+        form = FundForm()
 
-    return render(request, 'ser_medical_add.html', {"form":form})
+    return render(request, 'service/donate_fund.html', {"form":form})
