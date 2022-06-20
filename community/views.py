@@ -32,7 +32,7 @@ def update_profile(request):
             profile = form.save(commit=False)
             profile.user = current_user
             profile.save()
-        return redirect('sercices')
+        return redirect('services')
 
     else:
         form = ProfileForm()
@@ -44,21 +44,25 @@ def clothes(request):
 
     return render(request, 'ser_clothes.html', {"clothes": clothes})
 
-def add_business(request):
+def add_clothes(request):
     current_user = request.user
-    profile = Profile.objects.get(user=current_user)
+   
+    try:
+     profile = Profile.objects.get(user=current_user)
+
+    except Profile.DoesNotExist:
+      profile = None
 
     if request.method == "POST":
-        form = BusinessForm(request.POST, request.FILES)
+        form = ClothForm(request.POST, request.FILES)
         if form.is_valid():
-            business = form.save(commit=False)
-            business.owner = current_user
-            business.neighbourhood = profile.neighbourhood
-            business.save()
+            cloth = form.save(commit=False)
+            cloth.owner = current_user
+            cloth.save()
 
-        return HttpResponseRedirect('/businesses')
+        return HttpResponseRedirect('information')
 
     else:
-        form = BusinessForm()
+        form = ClothForm()
 
-    return render(request, 'update/update_buss.html', {"form":form})
+    return render(request, 'ser_cloth_add.html', {"form":form})
