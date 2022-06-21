@@ -18,7 +18,7 @@ Service=(
 )
 Category=(
     ('Sell', 'Sell'),
-    ('Donation', 'Donation'),
+    ('Donate', 'Donate'),
   
 )
 Target=(
