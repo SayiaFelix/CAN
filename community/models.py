@@ -1,3 +1,4 @@
+from pydoc import describe
 from unicodedata import category
 from django.db import models
 from django.db import models
@@ -30,11 +31,12 @@ Target=(
 )
 
 # Create your models here.
-class Motivation(models.Model):
+class Services(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    motiv_photo = models.ImageField(upload_to='motive/')
-    motivation = HTMLField()
+    type = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='service/')
+    description = HTMLField()
     target = models.CharField(max_length=15, choices=Target, default="kids")
     date = models.DateTimeField(auto_now_add=True)
 
@@ -114,9 +116,14 @@ class Profile(models.Model):
         return profile
 
     @classmethod
-    def search_profile(cls, name):
-        profile = Profile.objects.filter(user__username__icontains = name)
+    def find_profile(cls,search_term):
+        profile = Profile.objects.filter(user__username__icontains=search_term)
         return profile
+        
+    # @classmethod
+    # def search_profile(cls, name):
+    #     profile = Profile.objects.filter(user__username__icontains = name)
+    #     return profile
 
     def delete_profile(self):
          self.delete()
@@ -129,11 +136,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.username
+    
+
+   
 
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     cloth = models.ForeignKey(Cloth, on_delete=models.CASCADE)
-    motive = models.ForeignKey(Motivation, on_delete=models.CASCADE)
+    motive = models.ForeignKey(Services, on_delete=models.CASCADE)
 
 

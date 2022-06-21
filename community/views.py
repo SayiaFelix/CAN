@@ -77,9 +77,9 @@ def motivation(request):
     except Profile.DoesNotExist:
       profile = None
 
-    motivation = Motivation.objects.all
+    motivation = Services.objects.all
 
-    return render(request, 'service/motivation.html', {"motivation":motivation})
+    return render(request, 'service/service.html', {"motivation":motivation})
 
 def add_motivation(request):
     current_user = request.user
@@ -91,7 +91,7 @@ def add_motivation(request):
       profile = None
 
     if request.method == "POST":
-        form = MotivationForm(request.POST, request.FILES)
+        form = ServicesForm(request.POST, request.FILES)
         if form.is_valid():
             motive = form.save(commit=False)
             motive.user = current_user
@@ -100,9 +100,9 @@ def add_motivation(request):
         return HttpResponseRedirect('motivation')
 
     else:
-        form = MotivationForm()
+        form = ServicesForm()
 
-    return render(request, 'service/add_motivation.html', {"form":form})
+    return render(request, 'service/add_service.html', {"form":form})
 
 
 def medical(request):
@@ -164,3 +164,17 @@ def donate_funds(request):
         form = FundForm()
 
     return render(request, 'service/donate_fund.html', {"form":form})
+
+def search(request):
+    current_user = request.user
+    profile = Profile.get_profile()
+    if 'username' in request.GET and request.GET["username"]:
+        search_term = request.GET.get("username")
+        searched_name = Profile.find_profile(search_term)
+        message = search_term
+
+        return render(request,'service/search.html',{"message":message,"profiles":profile,"user":current_user,"username":searched_name})
+    else:
+        message = "You haven't searched for any username"
+        return render(request,'insta/search.html',{"message":message})
+

@@ -9,12 +9,12 @@
       <br>
     <div class="mx-auto" style="max-width:50rem; margin-top:50px;">
           <div class="card">
-                <h4 class="card-header h4 text-center"> Inspirational</h4>
+                <h4 class="card-header h4 text-center"> Add Service</h4>
                 <div class="card-body">
                     <form  action="{%url 'add_motive'%}" method="POST" enctype="multipart/form-data">
                             {%csrf_token%}
                             {% bootstrap_form form%}
-                            <button style="border: solid 1px #333; padding: 1em;" class="btn btn-outline-secondary btn-block mb-4 mx-auto" type="submit" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <button style="border: solid 1px #333; padding: 1em;" class="btn btn-outline-secondary btn-sm btn-block mb-4 mx-auto" type="submit" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fas fa-upload fa-lg"></i> ADD
                             </button>
                     </form>

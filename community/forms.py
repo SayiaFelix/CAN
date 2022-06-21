@@ -2,10 +2,10 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
 
-class MotivationForm(forms.ModelForm):
+class ServicesForm(forms.ModelForm):
     class Meta:
-        model = Motivation
-        exclude = ['name']
+        model = Services
+        exclude = ['type']
 
 class MedicalForm(forms.ModelForm):
     class Meta:
