@@ -18,7 +18,7 @@ Service=(
     ('Motivator', 'Motivator'),
 )
 Category=(
-    ('Sell', 'Sell'),
+    ('Sale', 'Sale'),
     ('Donate', 'Donate'),
   
 )
@@ -83,6 +83,7 @@ class medicalservices(models.Model):
 
 class Medical(models.Model):
     m_photo = models.ImageField(upload_to='medical/')
+    daktari = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=100)
     email = models.EmailField()
     contact = models.IntegerField()
@@ -130,11 +131,6 @@ class Profile(models.Model):
         profile = Profile.objects.filter(user__username__icontains=search_term)
         return profile
         
-    # @classmethod
-    # def search_profile(cls, name):
-    #     profile = Profile.objects.filter(user__username__icontains = name)
-    #     return profile
-
     def delete_profile(self):
          self.delete()
 
