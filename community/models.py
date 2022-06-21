@@ -1,5 +1,6 @@
 from pydoc import describe
 from unicodedata import category
+from zoneinfo import available_timezones
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
@@ -21,12 +22,13 @@ Category=(
     ('Donate', 'Donate'),
   
 )
-Target=(
-    ('Kids', 'Kids'),  
-    ('Youth', 'Youth'),
-    ('Couples', 'Couples'),
-    ('Singles', 'Singles'),
-    ('Aged Groups', 'Aged Groups'),
+Available=(
+    ('6:00AM-9:00AM', '6:00AM-9:00AM'),
+    ('9:01AM-12:00AM', '9:01AM-12:00AM'),
+    ('12:01PM-3:00PM', '12:01PM-3:00PM'),
+    ('3:01PM-6:00PM', '3:01PM-6:00PM'),
+    ('6:01PM-9:00PM', '6:01PM-9:00PM'),
+    ('Emmergencies', 'Emmergencies'),
   
 )
 Size=(  
@@ -45,7 +47,7 @@ class Services(models.Model):
     type = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='service/')
     description = HTMLField()
-    target = models.CharField(max_length=15, choices=Target, default="kids")
+    available = models.CharField(max_length=15, choices=Available, default="6:00AM")
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
