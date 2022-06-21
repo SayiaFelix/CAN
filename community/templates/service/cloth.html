@@ -5,11 +5,11 @@
   <div class="container">
       <div class="col-md-12 mt-3">
         <br>
-          <h1 class="text-center" style="font-size: 50px"> Clothes</h1>
-          <hr>
+          <h1 class="text-center" style="font-size: 25px"> Clothes</h1>
+        
         </div>
-          <a class="nav-link fs-6" href="{% url 'add_info' %}">Clothes add</a>
-     
+          <a class="nav-link fs-6" href="{% url 'add_info' %}">Add Clothes</a>
+         <hr>
       <div class="row" style=" border-bottom: 1px solid white">
         {% for cloth in clothes %}
         <section class="global-page-header"style="border-radius: 15px; border-top: 2px solid white">
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-                        <h2 class="fw-bold text-light">{{ cloth.name }}</h2>
+                        <h2 class="fw-bold text-dark">{{ cloth.name }}</h2>
                     </div>
                 </div>
             </div>
@@ -26,36 +26,33 @@
     <br>
     <hr>
     <section class="portfolio-single">
-        <div class="container text-light">
+        <div class="container text-dark">
             <div class="row">
-              
                 <div class="col-md-6">
                     <div class="portfolio-single-img">
                     <br><br> <br>
-                        <img src="{{cloth.c_photo.url}}"style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);" class="card-img-top image-fluid" height="300px" width="550px" alt="">
+                        <img src="{{cloth.c_photo.url}}"style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);" class="card-img-top image-fluid" height="" width="" alt="">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="border-left: 1px solid black;border-radius: 10px;">
                     <div class="portfolio-content">
-                        <h3 class="subtitle fw-bold text-dark">Clothes Details</h3>
+                        <h3 class="subtitle fw-bold text-dark" >Clothes Details   <span style="float: right"></span></h3>
                         <hr>
-                        <p>
-                          <span><b>Description:</b></span> {{cloth.description|safe}}
-                        </p>
-                        <h3 class="subtitle fw-bold text-dark">Size: {{cloth.size}}</h3>
-                         <h3 class="subtitle fw-bold text-dark">For: {{cloth.category}}</h3>
-
-                        <p><b>Owner:</b> {{cloth.owner}}</p>
+                                <h5 class="subtitle text-dark">Size: {{cloth.size}}</h5>
+                                <h5 class="subtitle text-dark">For: {{cloth.category}}</h5>
+                                <p class="subtitle text-dark"><b>Description:</b> {{cloth.description |safe}}</p>
+                        </div>
+                       <br>
                         <hr>
-                            <div class="modal-footer" style="display:block;">
-                                <h4 class="text-center fw-bold">Owners Contacts</h4>
+                        <h4 class="subtitle text-dark"> Owners: {{cloth.owner}} Contacts</h4>
+                        <hr>
+                          <div class="modal-footer" style="display:block;">
+                                    <p><span><b>Phone Number:</b></span> {{cloth.email}}</p>
+                                    <p><span><b>Address:</b></span>{{cloth.address}}</p>
+                                    <p><span><b>Email:</b></span> {{ cloth.contact}}</p>
                                 <hr>
                                 <br>
-                                <p><span><b>Phone Number:</b></span> {{cloth.contact}}</p>
-                                <p><span><b>Address:</b></span> {{cloth.address}}</p>
-                                <p><span><b>Email:</b></span> {{cloth.email}}</p>
                             </div>
-                    
                     </div>
                 </div>
             </div>

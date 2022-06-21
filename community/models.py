@@ -29,6 +29,14 @@ Target=(
     ('Aged Groups', 'Aged Groups'),
   
 )
+Size=(  
+    ('XSmall', 'XSmall'),
+    ('Small', 'Small'),  
+    ('Medium', 'Medium'),
+    ('Large','Large'),
+    ('XLarge', 'XLarge'), 
+)
+
 
 # Create your models here.
 class Services(models.Model):
@@ -46,7 +54,7 @@ class Services(models.Model):
 class Cloth(models.Model):
     c_photo = models.ImageField(upload_to='cloth/')
     description = HTMLField()
-    size = models.IntegerField()
+    size = models.CharField(max_length=15, choices=Size, default="kids")
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=15, choices=Category, default="sell")
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
