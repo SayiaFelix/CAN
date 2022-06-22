@@ -1,0 +1,26 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='row col-xs-12 col-lg-10 mt-5 pl-sm-5 pr-sm-5 p-0' style="margin: 0 auto;">
+    <div class="phone-side-content d-none d-lg-inline col-5 ml-5 p-0 pl-2 mr-0">
+        <img src="/static/images/login3.jpg" alt="phone image" style="height:35rem;">
+    </div>
+    <div class='signup-content text-center col-xs-12 col-lg-5 m-md-0 ml-sm-5 m-xs-0'>
+        <div class='card p-4 pt-4'>
+            <p><img src="/static/images/login9.jpeg" alt="logo" style="width:100px"></p>  
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <a href="{% url 'login' %}" class="btn btn-outline-dark btn-lg">Login Again</a>
+                <input type="hidden" name="next" value="" href="{% url 'login' %}" />
+            </form>
+  
+            <!-- <p><img class='mb-2 mt-3'src="" style="width: 80%;"></p> -->
+           
+        </div>
+        
+    </div>
+  </div>
+    
+{% endblock %}
