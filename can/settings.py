@@ -1,9 +1,9 @@
 
 import os
 from pathlib import Path
-# import dj_database_url
-# import django_on_heroku
-# from decouple import config
+import dj_database_url
+import django_on_heroku
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,20 +15,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x62(^ef=i-^eqc%@$-_8jf5j=%6#fcw@23u9dcu75myod(ud=)'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+# # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
+# # Application definition
 INSTALLED_APPS = [
-
     'crispy_forms',
-    # 'tinymce',
+    'tinymce',
     'bootstrap4',
-    # 'community',
+    'products'
+    'community',
     'users',
     'landing',
     'django.contrib.admin',
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,11 +69,9 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'can.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -85,8 +84,8 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+# # Password validation
+# # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -104,8 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# # Internationalization
+# # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -118,10 +117,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# # Static files (CSS, JavaScript, Images)
+# # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
@@ -137,9 +134,7 @@ CRISPY_TEMPLATE_PACK='bootstrap4'
 LOGIN_REDIRECT_URL = 'home_view'
 LOGIN_URL = 'login'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+CRISPY_TEMPLATE_PACK='bootstrap4'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())

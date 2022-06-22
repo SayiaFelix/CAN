@@ -1,10 +1,3 @@
-
-from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as auth_views
@@ -19,6 +12,9 @@ urlpatterns = [
     path('', include('landing.urls')),
     # path('', include('community.urls')),
     # path('tinymce/', include('tinymce.urls')),
+    path('', include('products.urls')),
+    path('', include('community.urls')),
+    path('tinymce/', include('tinymce.urls')),
 ]
 
 admin.site.site_header= "CAN Administration"

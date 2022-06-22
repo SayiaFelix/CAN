@@ -8,3 +8,4 @@ admin.site.register(medicalservices)
 admin.site.register(Services)
 admin.site.register(Fund)
 admin.site.register(Comment)
+
