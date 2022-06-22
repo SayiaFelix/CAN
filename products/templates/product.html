@@ -4,85 +4,84 @@
 {% load bootstrap4 %}
 {% load static %}
 
-<hr>
-<h5 class="text-center text-bold">PRODUCTS</h5>
-<hr>
+
   <div class="container">
-    <div class="row m-3 p-3">
+     <h1 class="text-center text-dark fw-bold" style="font-size: 30px">Products</h1>
+     <hr>
+           <div class="row text-center ml-5">
+                <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-3">
+                    <a href="{% url 'clo' %}">
+                       <img src="{% static 'images/CLOTHES.jpg' %}" style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid" alt="CLOTHES">
+  
+                        <h4 class="mtaa">CLOTHES
+                        </h4>
+                    </a>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <br><br> <br> <br> 
+                        <h2 class="">Clothes Line</h2>
+                        <hr>
+                        <p>We all need a pair or two of new official/casual clothes every once in a while. Worry not, we have a collection of clothes that will enusre you stand out in your work place. </p>
+                    
+                </div> 
+           </div>
+        <hr>
+        <div class="row text-center ml-5">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <br><br> <br> <br> 
+                        <h2 class="">Construction materials</h2>
+                        <hr>
+                        <p>Having a construction projct can be hectic as it is. Knowing where to get various construction materials can ease the heavy burden. Check out these materials offered by the various vendors in our community.</p>   
+                    
+                </div> 
+                <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-3">
+                    <a href="{% url 'construction' %}">
+                      
+                       <img src="{% static 'images/BUILDING.jpg' %}" style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid" alt="BUILDING">  
+                        <h4 class="mtaa">Constructions 
+                        </h4>
+                    </a>
+                </div>
+            
+           </div>
+          <hr>
+          <div class="row text-center ml-5">
+                <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-3">
+                    <a href="{% url 'groceries' %}">
+                       <img src="{% static 'images/GROCERIES.jpg' %}" style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid" alt="GROCERIES">
 
-      <div class="card col-md-6 ">
-        <img src="{% static 'images/CLOTHES.jpg' %}" alt="CLOTHES">
-        
-      </div>
-      </div class=" col-md-4">
-       <h5><a href="{% url 'clothes' %}" class="nav-link">Clothes</h5>
-        
-         <p>We all need a pair or two of new official/casual clothes every once in a while. Worry not, we have a collection of clothes that will enusre you stand out in your work place. </p>
-          
+                        <h4 class="mtaa">GROCERIES
+                        </h4>
+                    </a>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <br><br> <br> <br> 
+                        <h2 class="">Groceries</h2>
+                        <hr>
+                        <p>An apple a day keeps the doctor awa they say. We are here to ensure visits to the doctor are kept to a minimum. Fresh groceries from vegetables to fruits offered in this platform. CHeck out mre inf on how to place orders. </p>     
+                </div> 
+           </div>
 
-      </div>
-    </div>
-
+        <hr>
+      <div class="row text-center ml-5">
+              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <br><br> <br> <br> 
+                        <h2 class="">Quick shopping</h2>
+                        <hr>
+                        <p>Tired of the very long queues at the supermarkets? Well </p>
+                    
+                </div> 
+                <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-3">
+                    <a href="{% url 'shopping' %}">
+                      
+                      <img src="{% static 'images/SHOPPING.jpg' %}"style="border-radius: 10px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid" alt="SHOPPING">   
+                        <h4 class="mtaa">QUICK SHOP
+                        </h4>
+                    </a>
+                </div> 
+           </div>    
     <hr>
-
-    <div class="row m-3 p-3">
-      
-      <div class="col-md-4 ">
-        <h5><a href="{% url 'construction' %}" class="nav-link">Construction materials</h5>
-        <ul>
-          <p>Having a construction projct can be hectic as it is. Knowing where to get various construction materials can ease the heavy burden. Check out these materials offered by the various vendors in our community.</p>
-          
-        </ul>
-
-      </div>
-
-      <div class="card col-md-6 ">
-
-        <img src="{% static 'images/BUILDING.jpg' %}" alt="BUILDING">
-        
-       
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row m-3 p-3">
-      <div class="card col-md-6 ">
-        <img src="{% static 'images/GROCERIES.jpg' %}" alt="GROCERIES">
-
-      </div>
-
-      <div class="col-md-4 ">
-        <h5><a href="{% url 'groceries' %}" class="nav-link">Groceries</h5>
-        <ul>
-          <p>An apple a day keeps the doctor awa they say. We are here to ensure visits to the doctor are kept to a minimum. Fresh groceries from vegetables to fruits offered in this platform. CHeck out mre inf on how to place orders. </p>
-
-        </ul>
-      </div>
-    </div>
-
-<hr>
-    <div class="row m-3 p-3">
-
-      <div class="card col-md-6 ">
-        <img src="{% static 'images/SHOPPING.jpg' %}" alt="SHOPPING">
-          
-      </div>
-
-      <div class="col-md-4 ">
-        <h5><a href="{% url 'shopping' %}" class="nav-link">General Shopping</h5>
-        <ul>
-         <p>Tired of the very long queues at the supermarkets? Well </p>
-
-
-        </ul>
-      </div>
-    </div>
-    <hr>
-
-  </div>
-
-
+</div>
 {% endblock content %}    
 
    

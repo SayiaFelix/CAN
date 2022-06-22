@@ -10,7 +10,7 @@ urlpatterns=[
     url('search/', views.search, name='search'),
     url('newproduct', views.NewProduct, name='newproduct'),
 
-    url('clothes/', views.clothes, name='clothes'),
+    url('clothes/', views.clothes, name='clo'),
     url('groceries/', views.groceries, name='groceries'),
     url('shopping/', views.shopping, name='shopping'),
     url('construction/', views.construction, name='construction'),

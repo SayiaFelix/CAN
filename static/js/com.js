@@ -25,16 +25,6 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// function openNav() {
-//     document.getElementById("mySidebar").style.width = "250px";
-//     document.getElementById("main").style.marginLeft = "250px";
-// }
-
-// function closeNav() {
-//     document.getElementById("mySidebar").style.width = "0";
-//     document.getElementById("main").style.marginLeft = "0";
-// }
-
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -43,4 +33,13 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+}
+
+function order() {
+    swal({
+        title: "Order succesfully placed!",
+        text: "Your order was sent to the vendor!Vendor will reach out to you within 24 hrs/Call the number listed!",
+        icon: "success",
+        button: "Thank you and come again!",
+    });
 }
