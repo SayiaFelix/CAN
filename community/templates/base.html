@@ -54,14 +54,14 @@
         </div>
         <div id="main">
           <button class="openbtn" onclick="openNav()">☰MENU</button>  
-          <div style="float:right;">
+          {% comment %} <div style="float:right;">
             <form class="form-inline mx-auto" role="search" action="{% url 'search' %}" method="get">
                 <div class="form-group">
                     <input type="text" class="form-control" role="search" placeholder="Search User" aria-label="Search" name="username">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
              </form>
-          </div>
+          </div> {% endcomment %}
          
           <hr>
           {% block content %}{%endblock%} 
