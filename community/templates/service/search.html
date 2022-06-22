@@ -2,14 +2,16 @@
 {% block content %}
 {{ block.super}}
 {% load bootstrap4 %}
-<hr>
+
 <div class="container">
     <div class="row">
         {% if username %}
-        <h3 class="text-center">Found {{username | length}} user by the name <b>{{message | title}}</b>.</h3>
+        <h3 class="text-center">Found {{username | length}} member. </h3>
+        <hr>
+        <h4 class="text-center"> <br><b>{{message | title}}</b> Profile Information.</h4>
         <hr>
         {% else %}
-        <h2 class="text-center">Found 0 users for the searched name {{message | title}}</h2>
+        <h2 class="text-center">Found no member for the searched name {{message | title}}</h2>
         {% endif %}
     </div>
     <div class="row">
@@ -26,10 +28,10 @@
             {% endif %} {% endcomment %}
             
               <hr>
-            <h5 class="text-center">  {{user.service}}</h5> 
-            <h6 class="text-center">  {{user.contact}}</h6> 
-            <h6 class="text-center">  {{user.email}}</h6>
-            <p class="text-center">  {{user.bio|safe}}</p>
+            <h5 class="text-center"><b> Serivive: </b>{{user.service}}</h5> 
+            <h6 class="text-center"> <b>Phone Number: </b>{{user.contact}}</h6> 
+            <h6 class="text-center"><b> Email: </b>{{user.email}}</h6>
+            <p class="text-center"> Info: {{user.bio|safe}}</p>
          </div>
             {% endfor %}
         {% endif %}
