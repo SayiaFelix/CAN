@@ -1,3 +1,4 @@
+from http import server
 from pydoc import describe
 from unicodedata import category
 from zoneinfo import available_timezones
@@ -44,7 +45,7 @@ Size=(
 # Create your models here.
 class Services(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
+    Service = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='service/')
     description = HTMLField()
