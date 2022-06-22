@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'tinymce',
     'bootstrap4',
-    'products'
+    'products',
     'community',
     'users',
     'landing',
