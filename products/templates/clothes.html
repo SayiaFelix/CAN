@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<hr>
+<h5 class="text-center">Clothes</h5>
+<hr>
+  <div class="container">
+    <div class="row m-3 p-3">
+      <div class="card col-md-6 ">
+        
+        <img src="{% static 'images/clothes.jpg' %}" alt="clothes">
+      </div>
+
+      <div class="col-md-4 ">
+        <h5>Official wear</h5>
+        <ul>
+          <div class="text text-bold">
+            <li>Description : Official trousers, skirts, tops and shirts.</li>
+            <li>Price per item :Kshs. 1,000 </li>
+            <li>Contact information : 0704 241099</li>
+
+          
+           
+
+            <button onclick="order();">
+              
+            Order now </button>
+            
+
+  
+              
+          </div>  
+
+        </ul>
+
+
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row m-3 p-3">
+      
+      <div class="col-md-4 ">
+        <h4>Bridal Dresses</h4>
+        <ul>
+          <li>Description : For your big day, we have you.Various designs and height length.  </li>
+          <li>Price : Kshs. 9500 per dress (alterations at an added cost).</li>
+          <li>Contact information : 0724 560012</li>
+        
+          <button onclick="order();">Order now
+
+          </button>
+         
+
+        </ul>
+
+      </div>
+
+      <div class="card col-md-6 ">
+        
+        <img src="{% static 'images/bridal.jpg' %}" alt="clothes">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row m-3 p-3">
+      <div class="card col-md-6 ">
+        
+        <img src="{% static 'images/sweaters.jpg' %}" alt="clothes">
+      </div>
+
+      <div class="col-md-4 ">
+        <h5> Sweaters</h5>
+        <ul>
+          <li>Description : Both longa and short sweaters. Vary in thickness and type of material.</li>
+          <li>Price : Kshs. 900 per sweater top.</li>
+          <li>Contact information: 0723 456568</li>
+
+        
+          <button onclick="order();">Order now </button>
+
+        </ul>
+      </div>
+    </div>
+
+<hr>
+    <div class="row m-3 p-3">
+      
+      <div class="col-md-4 ">
+        <h4>Male Shoes</h4>
+        <ul>
+          <li>Description : Male official/casual shes in various colors and materials.</li>
+          <li>Price : Kshs. 2500 per shoe.</li>
+          <li>Contact information : 0722 341008</li>
+         
+          <button onclick="order();">Order now</button>
+         
+
+        </ul>
+
+      </div>
+
+      <div class="card col-md-6 ">
+        
+        <img src="{% static 'images/shoes.jpg' %}" alt="clothes">
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+{% endblock content %}   
+
+{% block script %}
+
+<script type="text/javascript">
+
+  function order() {
+    swal({
+              title: "Order succesfully placed!",
+              text: "Your order was sent to the vendor!Vendor will reach out to you within 24 hrs/Call the number listed!",
+              icon: "success",
+              button: "Thank you and come again!",
+            });
+    
+
+  } 
+</script>
+   
+  {% endblock %}

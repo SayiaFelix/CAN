@@ -1,0 +1,88 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4 %}
+{% load static %}
+
+<hr>
+<h5 class="text-center text-bold">PRODUCTS</h5>
+<hr>
+  <div class="container">
+    <div class="row m-3 p-3">
+
+      <div class="card col-md-6 ">
+        <img src="{% static 'images/CLOTHES.jpg' %}" alt="CLOTHES">
+        
+      </div>
+      </div class=" col-md-4">
+       <h5><a href="{% url 'clothes' %}" class="nav-link">Clothes</h5>
+        
+         <p>We all need a pair or two of new official/casual clothes every once in a while. Worry not, we have a collection of clothes that will enusre you stand out in your work place. </p>
+          
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row m-3 p-3">
+      
+      <div class="col-md-4 ">
+        <h5><a href="{% url 'construction' %}" class="nav-link">Construction materials</h5>
+        <ul>
+          <p>Having a construction projct can be hectic as it is. Knowing where to get various construction materials can ease the heavy burden. Check out these materials offered by the various vendors in our community.</p>
+          
+        </ul>
+
+      </div>
+
+      <div class="card col-md-6 ">
+
+        <img src="{% static 'images/BUILDING.jpg' %}" alt="BUILDING">
+        
+       
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row m-3 p-3">
+      <div class="card col-md-6 ">
+        <img src="{% static 'images/GROCERIES.jpg' %}" alt="GROCERIES">
+
+      </div>
+
+      <div class="col-md-4 ">
+        <h5><a href="{% url 'groceries' %}" class="nav-link">Groceries</h5>
+        <ul>
+          <p>An apple a day keeps the doctor awa they say. We are here to ensure visits to the doctor are kept to a minimum. Fresh groceries from vegetables to fruits offered in this platform. CHeck out mre inf on how to place orders. </p>
+
+        </ul>
+      </div>
+    </div>
+
+<hr>
+    <div class="row m-3 p-3">
+
+      <div class="card col-md-6 ">
+        <img src="{% static 'images/SHOPPING.jpg' %}" alt="SHOPPING">
+          
+      </div>
+
+      <div class="col-md-4 ">
+        <h5><a href="{% url 'shopping' %}" class="nav-link">General Shopping</h5>
+        <ul>
+         <p>Tired of the very long queues at the supermarkets? Well </p>
+
+
+        </ul>
+      </div>
+    </div>
+    <hr>
+
+  </div>
+
+
+{% endblock content %}    
+
+   
