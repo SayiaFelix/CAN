@@ -4,7 +4,7 @@
 {% load bootstrap4 %}
 {% load static %}
     <div class="container" id="">
-        <br>
+        {% comment %} <br>
      
       <div class="col-" >         
             <h5 style="margin-top: px; float:right;"> <a class="" href="/profile/{{user.id}}" style="text-decoration: none; font-weight: bold; margin-top:px;color:black;"  title="User">{{user}} <i class="fa-solid fa-user ml-2"></i></a></h5>
@@ -19,11 +19,10 @@
         <a class="nav-link fs-6" href="{% url 'medicalservices' %}">medicalservice</a>
         <a class="nav-link fs-6" href="{% url 'add_medic' %}">Medic add</a>
         <a class="nav-link fs-6" href="{% url 'donate_funds' %}">Donate Funds</a>
-    </div>
+    </div> {% endcomment %}
    <br>
  
-  <div class="container-fluid">
-        <br>
+  <div class="container">
         <h1 class="text-center fw-bold" style="font-size: 50px;font-family: 'Source Sans Pro', sans-serif;"> <span class="text-muted">Services</span> </h1>
         <hr class="text-dark">
             <div class="row text-center ml-5">
@@ -39,7 +38,7 @@
                         <h2 class="">Clothes Line</h2>
                         <hr>
                         <p>
-                            For the love of our Community members,you <br>can check some of the clothes in our Network Hub which <br> our membersare donating and those which are on sale too.Feel free <br>to contact the owner through our team marketer.More information <br>about sales items visit Product page.
+                            For the love of our Community members,you <br>can check some of the clothes in our Network Hub <br> which our membersare donating and those which are <br>on sale   too.Feel freeto contact the owner through our <br>team marketer.More information  about sales items visit Product page.
                         </p>
                     
                 </div> 
@@ -54,7 +53,7 @@
                        <h2 class="">SERVICES</h2>
                         <hr>
                         <p>
-                            For the love of our Community members,you <br>can check some of the Services in our Network Hub <br>which our member are offering and the time they are <br>available.Feel free to contact the owner through our <br>team marketer or directly.
+                            For the love of our Community members,you <br>can check some of the Services in our Network Hub<br> which our member are offering and the time they are <br>available.Feel free to contact the owner through our <br>team marketer or directly.
                         </p>
                     
                 </div> 
@@ -82,7 +81,7 @@
                     
                         <hr>
                         <p>
-                            For the love of our Community members,you <br>can check some of the Medical Services available and<br> Daktari Details in our Network Hub which our Community <br>members are providing.Feel free to contact the Daktari<br> through our team marketer or directly<br>  and Daktari will show up.
+                            For the love of our Community members,<br>you can check some of the Medical Services<br> available and Daktari Details in our Network Hub <br>which our Community members are providing.Feel<br> free to  contact the Daktari through our team marketer <br>or directly and Daktari will show up.
                         </p>
                        
                 </div> 
@@ -91,36 +90,8 @@
     <br>  
     <hr>
  </div>
-    <style>
-        .mtaa {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 5%;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-            font-family: 'Montserrat', sans-serif;
-        }
-    
-        .mtaa:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: black;
-            font-family: 'Montserrat', sans-serif;
-            border-radius:20px;
-            border-top:2px solid rgba(255, 255, 255, 0.5);
-        }
-    
-        .image {
-            padding: 0 !important;
-        }
-           body {
-      font-family: "Lato", sans-serif;
-      transition: background-color .5s;
-    }
-   
+    {% comment %} <style>
+       
     input[type=text] {
         padding: 6px;
         margin-top: 8px;
@@ -158,6 +129,6 @@
         }
       }
       
-    </style> 
+    </style>  {% endcomment %}
   
 {% endblock %}
