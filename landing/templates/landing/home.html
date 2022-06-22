@@ -1,0 +1,70 @@
+{% extends 'landing/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+   
+<div class="container text-dark">
+      <div class="center" style="color:rgb(1, 4, 19)">
+         <h2 class="text-center">Community Aid Network</h2>
+         <h3 class="text-center"><i>About Us</i></h3>
+         <p class="center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div> <br/>
+       <div class="d-flex center">
+        <button class="mx-2 green"><a href="">Products</a></button>
+        <button class="mx-2 green">Services</button>
+      </div> 
+       <div>
+        <h2 class="text-center">Meet the Team</h2> <hr/>
+       </div>
+       
+       <div class="row d-flex">
+        <div class="col-md-4">
+          <img src="/static/images/login2.jpg" alt="Avatar" class="image" >
+          <div class="overlay">My Name is John</div>
+        </div> <br/>
+        <div class="col-md-4"> <br/>
+          <img src="/static/images/login2.jpg" alt="Avatar" class="image">
+          <div class="overlay">My Name is John</div>
+        </div> <br/>
+        <div class="col-md-4"> <br/>
+          <img src="/static/images/login3.jpg" alt="Avatar" class="image">
+          <div class="overlay">My Name is John</div>
+        </div>
+    
+      </div> <br/>
+
+        <div class="slideshow-container center">
+          <h2 class="text-center">Testimonials</h2>
+          <div class="mySlides">
+            <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+            <p class="author">- John Keats</p>
+          </div>
+          
+          <div class="mySlides">
+            <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+            <p class="author">- Ernest Hemingway</p>
+          </div>
+          
+          <div class="mySlides">
+            <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+            <p class="author">- Thomas A. Edison</p>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          
+          <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          
+        </div>
+    
+  
+
+
+{% endblock %}
