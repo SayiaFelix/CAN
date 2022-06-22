@@ -11,8 +11,8 @@
          <p class="center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div> <br/>
        <div class="d-flex center">
-        <button class="mx-2 green"><a href="">Products</a></button>
-        <button class="mx-2 green">Services</button>
+        <button class="mx-2 green"><a href="{% url 'product' %}">Products</a></button>
+        <button class="mx-2 green"><a href="{% url 'services' %}">Services</a></button>
       </div> 
        <div>
         <h2 class="text-center">Meet the Team</h2> <hr/>
@@ -52,8 +52,7 @@
           </div>
           
           <a class="prev" onclick="plusSlides(-1)">❮</a>
-          <a class="next" onclick="plusSlides(1)">❯</a>
-          
+          <a class="next" onclick="plusSlides(1)">❯</a> 
           </div>
           
           <div class="dot-container">
@@ -63,8 +62,4 @@
           </div>
           
         </div>
-    
-  
-
-
 {% endblock %}
