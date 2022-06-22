@@ -16,6 +16,7 @@ Service=(
     ('Teacher', 'Teacher'),
     ('Sponsor', 'Sponsor'),
     ('Motivator', 'Motivator'),
+    ('Member', 'Member'),
 )
 Category=(
     ('Sale', 'Sale'),
