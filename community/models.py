@@ -1,4 +1,7 @@
+from http import server
+from pydoc import describe
 from unicodedata import category
+from zoneinfo import available_timezones
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
@@ -14,28 +17,39 @@ Service=(
     ('Teacher', 'Teacher'),
     ('Sponsor', 'Sponsor'),
     ('Motivator', 'Motivator'),
+    ('Member', 'Member'),
 )
 Category=(
-    ('Sell', 'Sell'),
-    ('Donation', 'Donation'),
+    ('Sale', 'Sale'),
+    ('Donate', 'Donate'),
   
 )
-Target=(
-    ('Kids', 'Kids'),  
-    ('Youth', 'Youth'),
-    ('Couples', 'Couples'),
-    ('Singles', 'Singles'),
-    ('Aged Groups', 'Aged Groups'),
+Available=(
+    ('6:00AM-9:00AM', '6:00AM-9:00AM'),
+    ('9:01AM-12:00AM', '9:01AM-12:00AM'),
+    ('12:01PM-3:00PM', '12:01PM-3:00PM'),
+    ('3:01PM-6:00PM', '3:01PM-6:00PM'),
+    ('6:01PM-9:00PM', '6:01PM-9:00PM'),
+    ('Emmergencies', 'Emmergencies'),
   
+)
+Size=(  
+    ('XSmall', 'XSmall'),
+    ('Small', 'Small'),  
+    ('Medium', 'Medium'),
+    ('Large','Large'),
+    ('XLarge', 'XLarge'), 
 )
 
+
 # Create your models here.
-class Motivation(models.Model):
+class Services(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    motiv_photo = models.ImageField(upload_to='motive/')
-    motivation = HTMLField()
-    target = models.CharField(max_length=15, choices=Target, default="kids")
+    Service = models.CharField(max_length=100)
+    type = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='service/')
+    description = HTMLField()
+    available = models.CharField(max_length=15, choices=Available, default="6:00AM")
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -44,7 +58,7 @@ class Motivation(models.Model):
 class Cloth(models.Model):
     c_photo = models.ImageField(upload_to='cloth/')
     description = HTMLField()
-    size = models.IntegerField()
+    size = models.CharField(max_length=15, choices=Size, default="kids")
     name = models.CharField(max_length=100)
     category = models.CharField(max_length=15, choices=Category, default="sell")
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -71,6 +85,7 @@ class medicalservices(models.Model):
 
 class Medical(models.Model):
     m_photo = models.ImageField(upload_to='medical/')
+    daktari = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     name = models.CharField(max_length=100)
     email = models.EmailField()
     contact = models.IntegerField()
@@ -114,10 +129,10 @@ class Profile(models.Model):
         return profile
 
     @classmethod
-    def search_profile(cls, name):
-        profile = Profile.objects.filter(user__username__icontains = name)
+    def find_profile(cls,search_term):
+        profile = Profile.objects.filter(user__username__icontains=search_term)
         return profile
-
+        
     def delete_profile(self):
          self.delete()
 
@@ -129,11 +144,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.username
+    
+
+   
 
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     cloth = models.ForeignKey(Cloth, on_delete=models.CASCADE)
-    motive = models.ForeignKey(Motivation, on_delete=models.CASCADE)
+    motive = models.ForeignKey(Services, on_delete=models.CASCADE)
 
 

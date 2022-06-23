@@ -5,26 +5,24 @@ from django.conf.urls.static import static
 
 
 urlpatterns=[
-    # url('^$',views.homepage, name='homepage'),
+  
     url('services/', views.services, name='services'),
-    # url('join/', views.join_hood, name='join_hood'),
-   
-    # url('information', views.information, name='info'),
-    # url('new/info', views.add_info, name = 'add_info'),
+    url('search/', views.search, name='search'),
+  
+    url('profile/(\d+)', views.profile, name = 'profile'),
+    url('update/profile', views.update_profile, name = 'update-profile'),
 
-    # url('post', views.post, name='post'),
-    # url('view/blog/(\d+)', views.view_post, name='view_blog'),
-    # url('news/post', views.add_post, name='add_post'),
+    url('information', views.clothes, name='clothes'),
+    url('new/info', views.add_clothes, name = 'add_info'),
 
-    # url('health', views.health, name='health'),
-    # url('search/', views.search, name = 'search'),
-    # url('services', views.services, name='service'),
+    url('motivation', views.motivation, name='motivation'),
+    url('new/motive', views.add_motivation, name = 'add_motive'),
 
-    # url('businesses', views.businesses, name='business'),
-    # url('add/business', views.add_business, name='add_business'),
+    url('add/funds', views.donate_funds, name='donate_funds'),
 
-    # url('profile/(\d+)', views.user_profile, name = 'user-profile'),
-    # url('update/profile', views.update_profile, name = 'update-profile'),
+    url('medical', views.medical, name='medicalservices'),
+    url('add/health', views.add_medical, name='add_medic'),
+
    
 ]
 

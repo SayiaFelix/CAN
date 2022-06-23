@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4 %}
+
+<div class="container">
+    <div class="row">
+        {% if username %}
+        <h3 class="text-center">Found {{username | length}} member. </h3>
+        <hr>
+        <h4 class="text-center"> <br><b>{{message | title}}</b> Profile Information.</h4>
+        <hr>
+        {% else %}
+        <h2 class="text-center">Found no member for the searched name {{message | title}}</h2>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if username %}
+        {% for user in username %}
+        <div class="shadow p-3 mb-4 bg-body rounded-top border-top border-2 border-secondary" style="border-radius:10px;">
+            
+            <h1 class="text-center">  {{user.user}}</h1>
+          
+            <hr>  
+            <img class="card-img-top" class="img-responsive" src="{{user.profile_photo.url}}"height="1000" width="200"style="border-radius:15px; box-shadow: 2px 2px 5px rgba(5,5,10,0.5);">
+            {% comment %} {% if user.image %}   
+            
+            {% endif %} {% endcomment %}
+            
+              <hr>
+            <h5 class="text-center"><b> Serivive: </b>{{user.service}}</h5> 
+            <h6 class="text-center"> <b>Phone Number: </b>{{user.contact}}</h6> 
+            <h6 class="text-center"><b> Email: </b>{{user.email}}</h6>
+            <p class="text-center"> Info: {{user.bio|safe}}</p>
+         </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<br>
+<hr>
+{% endblock %}

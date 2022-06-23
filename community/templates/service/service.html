@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+  <div class="container">
+         <div class="col-md-12 mt-3">
+        <br>
+          <h1 class="text-dark" style="font-size: 40px"> Services Available</h1>
+          <hr>
+        </div>
+        <div class="row">
+            {% for motive in motivation %}    
+              <br><br><br> 
+            <div style="" class="col-5 shadow mb-4 bg-body rounded-top border-top border-2 border-secondary p-1 ml-5" style="border-radius:20px; border-left:5px solid black;">
+               <div class="card-body">
+                    <h5 class="card-title"> <b>{{motive.Service}}</b></h5>
+                    <hr>
+                    <p class="card-text">{{motive.description|safe|truncatechars:20}}</p> 
+                    <a href="" data-target="#extraModal{{motive.id}}" data-toggle="modal" class="card-link btn btn-sm btn-outline-primary">Read More </a>
+                    <hr>
+                </div>
+            </div>  
+        <br>
+       
+     {% endfor %}
+     </div>
+     <br><br>
+        <div class="text-center mt-5 mb-2 mx-auto">
+            <button type="button" class="btn btn-lg btn-success" style="float: right; border-radius: 20px">
+                <a class=" text-dark fs-4 " style="text-decoration: none;" href="{% url 'add_motive' %}">Add Service</a>   
+            </button>     
+        </div>
+    </div>
+    {% for motive in motivation %}
+    <!-- Modal -->
+   <div class="modal fade" id="extraModal{{motive.id}}" tabindex="-1" role="dialog" aria-labelledby="extraModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle"> <b> {{motive.Service}}</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img class="card-img-top" class="img-responsive" src="{{motive.photo.url}}" data-target="#extraModal{{motive.id}}" data-toggle="modal" size="80px200">
+                <br>
+                <hr>
+             
+                <h6 class=""> Available between: <b> {{motive.available}}</b></h6>
+                <h6 class=""> Provider:<b> {{motive.user}}</b></h6>
+                <p class="card-text">  <b>Informations: </b>  {{motive.description |safe}} </p>
+                <label>Posted on: <em><b> {{motive.date|date:"M d, Y"}}</b></em> by <b>{{motive.user}} </b></label>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+         </div>
+     </div>
+  </div>
+ {% endfor %}
+{% endblock %}

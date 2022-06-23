@@ -1,0 +1,71 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4 %}
+{% load static %}
+
+  <div class="container">
+        <h1 class="text-center fw-bold" style="font-size: 50px;font-family: 'Source Sans Pro', sans-serif;"> <span class="text-muted">Services</span></h1>
+        <hr class="text-dark">
+            <div class="row text-center ml-5">
+                <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-2">
+                    <a href="{% url 'clothes' %}">
+                        <img src="{% static 'images/clothes.avif' %}" alt="" style="border-radius: 15px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid">
+                        <h4 class="mtaa">Clothes Line
+                        </h4>
+                    </a>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <br><br> <br> <br> 
+                        <h2 class="">Clothes Line</h2>
+                        <hr>
+                        <p>
+                            For the love of our Community members,you <br>can check some of the clothes in our Network Hub <br> which our membersare donating and those which are <br>on sale   too.Feel freeto contact the owner through our <br>team marketer.More information  about sales items visit Product page.
+                        </p> 
+                </div> 
+           </div>
+        <br>
+        <hr class="text-dark">
+            <div class="row text-center ml-5">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">   
+                        <br><br> <br> <br> 
+                       <h2 class="">SERVICES</h2>
+                        <hr>
+                        <p>
+                            For the love of our Community members,you <br>can check some of the Services in our Network Hub<br> which our member are offering and the time they are <br>available.Feel free to contact the owner through our <br>team marketer or directly.
+                        </p>
+                </div> 
+                <div class=" card col-lg-7 col-md-7 col-sm-12 col-xs-12 image card bg-light shadow-lg bg-body rounded p-3">
+                    <a href="{% url 'motivation' %}">
+                        <img src="{% static 'images/servv.avif' %}" alt="" style="border-radius: 15px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid">
+                        <h4 class="mtaa">Service Available</h4>
+                        
+                    </a>
+                </div>
+           </div>
+        <br>
+        <hr class="text-dark">
+            <div class="row text-center ml-5">
+                 <div class="card col-lg-7 col-md-7 col-sm-12 col-xs-12 image p-2">
+                    <a href="{% url 'medicalservices' %}">
+                        <img src="{% static 'images/meed.avif' %}" alt="" style="border-radius: 15px; box-shadow: 5px 5px 10px rgba(3,3,3,0.7);"height="400" class="card-img-top image-fluid">
+                        <h4 class="mtaa">Medical Attentions</h4>
+                        
+                    </a>
+                  </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                     <br><br> <br> <br> 
+                      <h2 class="">Medical Attentions</h2> 
+                        <hr>
+                        <p>
+                            For the love of our Community members,<br>you can check some of the Medical Services<br> available and Daktari Details in our Network Hub <br>which our Community members are providing.Feel<br> free to  contact the Daktari through our team marketer <br>or directly and Daktari will show up.
+                        </p>
+                       
+                </div> 
+           </div>
+    </div>  
+    <hr>
+ </div>
+  
+  
+{% endblock %}
