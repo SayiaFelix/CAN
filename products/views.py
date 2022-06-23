@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import *
 
 def product(request):
     return render(request,"product.html") 
 
+@login_required
 def search(request):
     if 'name' in request.GET and request.GET["name"]:
         search_term = request.GET.get("name")
@@ -17,6 +19,7 @@ def search(request):
         message = "You haven't searched for any product"
         return render(request,'search.html',{"message":message})   
 
+@login_required
 def NewProduct(request):
     current_user = request.user
     if request.method == 'POST':
@@ -31,6 +34,7 @@ def NewProduct(request):
         form = ProductForm()
     return render(request, 'newproduct.html', {"form":form, "current_user":current_user})
 
+@login_required
 def NewBusiness(request):
     current_user = request.user
     business = Business.objects.filter(business=current_user)
@@ -45,15 +49,19 @@ def NewBusiness(request):
 
     return render(request, 'business.html', {"business":business})
 
+@login_required
 def clothes(request):
-    return render(request,"clothes.html")     
+    return render(request,"clothes.html")  
 
+@login_required
 def groceries(request):
     return render(request,"groceries.html")     
 
+@login_required
 def shopping(request):
-    return render(request,"shopping.html")     
+    return render(request,"shopping.html")  
 
+@login_required
 def construction(request):
     return render(request,"construction.html") 
 

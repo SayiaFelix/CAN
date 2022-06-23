@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'can.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'can',
+        'NAME': 'cans',
         'USER': 'moringa',
-        'PASSWORD': 'can',
+        'PASSWORD': 'cans',
  
     }
 }

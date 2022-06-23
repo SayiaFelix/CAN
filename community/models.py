@@ -53,7 +53,7 @@ class Services(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.Service
 
 class Cloth(models.Model):
     c_photo = models.ImageField(upload_to='cloth/')

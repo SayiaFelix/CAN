@@ -38,32 +38,34 @@
      <div id="">
         <div id="mySidebar" class="sidebar" style="">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+       
+         
+
+          {% if user.is_authenticated%}
+            <hr>
+            <a href="{% url 'home_view' %}"  style="text-decoration: none; font-weight: bold; "class="">Home</a>
+            <hr>
+            <a class="" href="/profile/{{user.id}}" style="text-decoration: none; font-weight: bold;" title="User"><i class="fa-solid fa-user fa-lg mr-2"></i>{{user}}</a>
+            <hr>
+            <a href="{% url 'update-profile' %}" class="">Update Profile</a>
+            <hr>
+            <a href="{% url 'donate_funds' %}" class="">Donate Fund</a>
+            <hr>
+            <a class="nav-link" href="{% url 'services' %}"><i class='fab fa-servicestack mr-2'></i>SERVICES</a>
+            <hr>
+            <a class="nav-link" href="{% url 'product' %}"><i class="fa fa-product-hunt mr-2"  aria-hidden="true"></i>PRODUCTS</a>
+            <hr>
+            <a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out mr-2"></i>Log Out</a>
+   
+          {% else%}
           <hr>
           <a href="{% url 'home_view' %}"  style="text-decoration: none; font-weight: bold; "class="">Home</a>
-          <hr>
-          <a class="" href="/profile/{{user.id}}" style="text-decoration: none; font-weight: bold;" title="User"><i class="fa-solid fa-user fa-lg mr-2"></i>{{user}}</a>
-          <hr>
-          <a href="{% url 'update-profile' %}" class="">Update Profile</a>
-          <hr>
-          <a href="{% url 'donate_funds' %}" class="">Donate Fund</a>
-          <hr>
-          <a class="nav-link" href="{% url 'services' %}"><i class='fab fa-servicestack mr-2'></i>SERVICES</a>
-          <hr>
-          <a class="nav-link" href="{% url 'product' %}"><i class="fa fa-product-hunt mr-2"  aria-hidden="true"></i>PRODUCTS</a>
-          <hr>
-          <a href="{% url 'register' %}" class="nav-link"><i class='fas fa-registered mr-2'></i>Register</a>
           <hr> 
-          <a href="{% url 'logout' %}" class="nav-link"><i class="fa fa-sign-out mr-2"></i>Log Out</a>
+          <a href="{% url 'register' %}" class="nav-link"><i class='fas fa-registered mr-2'></i>Register</a>
           <hr>
           <a href="{% url 'login' %}" class="nav-link"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Log In</a>
           <hr>
-
-          {% comment %} {% if user.is_authenticated%}
-
-   
-          {% else%}
-       
-          {% endif%}  {% endcomment %}
+          {% endif%}  
         </div>
         <div id="main">
           <button class="openbtn" onclick="openNav()">☰MENU</button> 

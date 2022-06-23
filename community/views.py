@@ -38,7 +38,6 @@ def update_profile(request):
     return render(request, 'profile/update_profile.html', {"form": form})
 
 def clothes(request):
-  
     clothes = Cloth.objects.all
 
     return render(request, 'service/cloth.html', {"clothes": clothes})
@@ -69,14 +68,6 @@ def add_clothes(request):
 
 
 def motivation(request):
-    current_user = request.user
-    try:
-        
-     profile = Profile.objects.get(user=current_user)
-
-    except Profile.DoesNotExist:
-      profile = None
-
     motivation = Services.objects.all
 
     return render(request, 'service/service.html', {"motivation":motivation})
@@ -107,16 +98,7 @@ def add_motivation(request):
 
 
 def medical(request):
-    current_user = request.user
-   
-    try:
-     profile = Profile.objects.get(user=current_user)
-
-    except Profile.DoesNotExist:
-      profile = None
-
     medicalservices = Medical.objects.all
-
     return render(request, 'service/medical.html', {"medicalservices":medicalservices})
 
 @login_required
