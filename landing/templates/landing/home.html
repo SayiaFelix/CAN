@@ -9,10 +9,9 @@
             <br><br> <br> 
             <h1 style="color: black; font-size: 56px;font-weight: bold;">Community Aid <br> Network</h1>
             <hr>
-            <p style="font-size: 20px;color: black;" class="">Humanity to the Core</p>
+            <p style="font-size: 20px; color: black; font-weight: 400;">Humanity to the Core</p>
             <br>
             <br/>
-        
             <button type="button" class="button" ><a href="#about" style="text-decoration:none" class="text-dark">Get Started</a></button>
           </div>
           <div class="column col-7">
@@ -21,7 +20,7 @@
       </div>
 </div>
 <br><br> <br>
-<div style="background-color: #0E3642; height: 75vh; width: 100%; border-radius: 4px;">
+<div style="background-color: #0E3642; height: 75vh; width: 100%; border-radius: 8px;">
      <div class="container" id="about">
            <br><br> 
           <div class="row">
@@ -30,8 +29,8 @@
             </div>
             <div class="column col-md-6">
               <h1 style="color: #645B15">About Us</h1>
-              <hr>
-                <p class="text-light fs-6">CAN is a website where neighbours help each other through creating jobs, offering an affordable shopping experience, and supporting non-profit partners serving our local community. </p>
+              <hr class="text-light">
+                <p class="text-light fs-6" style=" font-weight: 600;">CAN is a website where neighbours help each other through creating jobs, offering an affordable shopping experience, and supporting non-profit partners serving our local community. </p>
                 <br>
                   <div class="d-flex ">
                     <button class="button ml-2"><a href="{% url 'services' %}" style="text-decoration:none" class="text-dark">Services</a></button>
@@ -86,7 +85,7 @@
             <hr>
           </div>
           <div class="mySlides" style="background-color:white; border-radius:10px;">
-             <h2 class="text-center"><img src="/static/images/avato.png" alt="Avatar" class="avatar" style="height:150px;width:150px"></h2>
+             <h2 class="text-center"><img src="/static/images/avato2.png" alt="Avatar" class="avatar" style="height:150px;width:150px"></h2>
              <br>
             <q class="text-">I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
             <p class="author">Paul Adams</p>
@@ -100,11 +99,11 @@
             <p class="text-center text"> Web Designer</p>
           </div>
           <div class="mySlides" style="background-color:white; border-radius:10px;">
-            <h2 class="text-center" ><img src="/static/images/avato.png" alt="Avatar" class="avatar" style="height:150px;width:150px"></h2>
+            <h2 class="text-center" ><img src="/static/images/avato2.png" alt="Avatar" class="avatar" style="height:150px;width:150px"></h2>
             <br>
             <q class="text">I have not failed. I've just found 10,000 ways that won't work.</q>
             <p class="author">- Thomas A. Edison</p>
-            <p class="text-center text-dark" > Web Designer</p>
+            <p class="text-center text-dark" > Developer</p>
           </div>
           <a class="prev" onclick="plusSlides(-1)">❮</a>
           <a class="next" onclick="plusSlides(1)">❯</a>
@@ -115,44 +114,5 @@
             <span class="dot" onclick="currentSlide(3)"></span>
           </div>
         </div>
-{% comment %}        
- <div style="background-color: #fff; ">
-      <div class="container" style="background-color: #fff; ">
-          <div style="text-align:center"> <br/>
-               <h2 style="color: rgb(58, 113, 121);">Contact Us</h2>
-            <p style="font-size:15px">Swing by for a cup of coffee, or leave us a message:</p>
-            <hr>
-          </div>
-          <br>
-          <div class="row">
-            <div class="column col-7">
-
-               <br><br> 
-           
-            </div>
-            
-            <div class="column col-5" style="border-left: 2px solid black; border-radius: 5px;"> 
-          
-                <form action="">
-                  <label for="fname">First Name</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
-                  <label for="lname">Last Name</label>
-                  <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                  <label for="country">Country</label>
-                  <select id="country" name="country">
-                    <option value="Nairobi">Nairobi</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <label for="subject">Subject</label>
-                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-                  <input type="submit" class="btn btn-primary" value="Send message">
-                </form>
-            </div>
-          </div>
-        </div>
-    </div>
- </div>  {% endcomment %}
-
- 
 {% endblock %}
 
