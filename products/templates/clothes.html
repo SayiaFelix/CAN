@@ -4,24 +4,24 @@
 
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
   <div class="container">
-    <h5 class="text-center">Clothes</h5>
+    <h3 class="text-dark" style="font-size: 40px"><strong>Clothes</strong></h3>
     <hr>
     <div class="row m-3 p-3">
-      <div class="card col-md-6 ">
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         <img src="{% static 'images/clothes.jpg' %}" alt="clothes">
       </div>
 
-      <div class="col-md-4 ">
-        <h5>Official wear</h5>
+      <div class="col-md-4 " style="margin-left:10px;">
+        <br><br> <br>
+        <h5 class="text-center">Official wear</h5>
         <ul>
           <div class="text text-bold">
             <li>Description : Official trousers, skirts, tops and shirts.</li>
             <li>Price per item :Kshs. 1,000 </li>
             <li>Contact information : 0704 241099</li>
            <br>
-           <hr>
+           
             <button type="button" onclick="order();" class="btn btn-outline-success"> Order now</button>
            </div>  
         </ul>
@@ -33,19 +33,19 @@
     <div class="row m-3 p-3">
       
       <div class="col-md-4 ">
-        <h4>Bridal Dresses</h4>
+        <h4 class="text-center">Bridal Dresses</h4>
         <ul>
           <li>Description : For your big day, we have you.Various designs and height length.  </li>
           <li>Price : Kshs. 9500 per dress (alterations at an added cost).</li>
           <li>Contact information : 0724 560012</li>
           <br>
-           <hr>
+
           <button type="button" onclick="order();" class="btn btn-outline-success"> Order now</button>
         </ul>
 
       </div>
 
-      <div class="card col-md-6 ">
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         
         <img src="{% static 'images/bridal.jpg' %}" alt="clothes">
       </div>
@@ -54,19 +54,19 @@
     <hr>
 
     <div class="row m-3 p-3">
-      <div class="card col-md-6 ">
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         
         <img src="{% static 'images/sweaters.jpg' %}" alt="clothes">
       </div>
 
       <div class="col-md-4 ">
-        <h5> Sweaters</h5>
+        <h5 class="text-center"> Sweaters</h5>
         <ul>
           <li>Description : Both longa and short sweaters. Vary in thickness and type of material.</li>
           <li>Price : Kshs. 900 per sweater top.</li>
           <li>Contact information: 0723 456568</li>
           <br>
-           <hr>
+          
           <button type="button" onclick="order();" class="btn btn-outline-success"> Order now</button>  
         </ul>
       </div>
@@ -74,21 +74,20 @@
    <hr>
     <div class="row m-3 p-3">
       <div class="col-md-4 ">
-        <h4>Male Shoes</h4>
+        <h4 class="text-center">Male Shoes</h4>
         <ul>
           <li>Description : Male official/casual shes in various colors and materials.</li>
           <li>Price : Kshs. 2500 per shoe.</li>
           <li>Contact information : 0722 341008</li>
           <br>
-          <hr>
+        
          <button type="button" onclick="order();" class="btn btn-outline-success"> Order now</button>  
         </ul>
       </div>
-      <div class="card col-md-6 "> 
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;"> 
         <img src="{% static 'images/shoes.jpg' %}" alt="clothes">
       </div>
     </div>
   </div>
-<hr>
-
 {% endblock content %}   
+

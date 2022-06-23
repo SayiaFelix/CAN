@@ -6,13 +6,13 @@
   <div class="container">
          <div class="col-md-12 mt-3">
         <br>
-          <h1 class="text-center text-dark" style="font-size: 50px"> Services Available</h1>
+          <h1 class="text-dark" style="font-size: 40px"> Services Available</h1>
           <hr>
         </div>
         <div class="row">
             {% for motive in motivation %}    
               <br><br><br> 
-            <div style="" class="col-5 shadow mb-4 bg-body rounded-top border-top border-2 border-secondary p-1 ml-5" style="border-radius:15px; border-left:2px solid black;">
+            <div style="" class="col-5 shadow mb-4 bg-body rounded-top border-top border-2 border-secondary p-1 ml-5" style="border-radius:20px; border-left:5px solid black;">
                <div class="card-body">
                     <h5 class="card-title"> <b>{{motive.Service}}</b></h5>
                     <hr>
@@ -25,9 +25,9 @@
        
      {% endfor %}
      </div>
-        <hr>
+     <br><br>
         <div class="text-center mt-5 mb-2 mx-auto">
-            <button type="button" class="btn btn-lg btn-outline-secondary" style="float: right; border-radius: 20px">
+            <button type="button" class="btn btn-lg btn-success" style="float: right; border-radius: 20px">
                 <a class=" text-dark fs-4 " style="text-decoration: none;" href="{% url 'add_motive' %}">Add Service</a>   
             </button>     
         </div>

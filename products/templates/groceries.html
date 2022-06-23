@@ -3,51 +3,36 @@
 {% block content %}
  
   <div class="container">
-     <h5 class="text-center">Groceries</h5>
+     <h3 class="text-dark" style="font-size: 40px"><b>Groceries</b></h3>
   <hr>
     <div class="row m-3 p-3">
-      <div class="card col-md-6 ">
-        
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         <img src="{% static 'images/vegetables.jpg' %}" alt="clothes">
       </div>
-
-      <div class=" col-md-4 ">
-        <h5> Vegetables</h5>
+      <div class=" col-md-5 ">
+        <h5 class="text-center"> Vegetables</h5>
         <ul>
           <li>Description : All organic vegetables.</li>
           <li>Price : Kshs. 70-300 per kilo.</li>
           <li>Contact Information : 0723 431002</li>
-
-         
-          <button onclick="order();">Order now </button>
-
+          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
         </ul>
-
-
-
       </div>
     </div>
 
     <hr>
 
-    <div class="row m-3 p-3">
-      
-      <div class="col-md-4 ">
-        <h4>Fruits</h4>
+    <div class="row m-3 p-3"> 
+      <div class="col-md-5 ">
+        <h4 class="text-center">Fruits</h4>
         <ul>
           <li>Description : All types of fruits, apples, bananas etc.</li>
           <li>Price :  Kshs. 70-300 per kilo.</li>
           <li>Contact Information :  0798 435610</li>
-          
-          <button onclick="order();">Order now</button>
-         
-
+          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
         </ul>
-
       </div>
-
-      <div class="card col-md-6 ">
-        
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         <img src="{% static 'images/fruits.jpg' %}" alt="clothes">
       </div>
     </div>
@@ -55,45 +40,21 @@
     <hr>
 
     <div class="row m-3 p-3">
-      <div class="card col-md-6 ">
-        
+      <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;"> 
         <img src="{% static 'images/groceries.jpg' %}" alt="clothes">
       </div>
-
-      <div class="col-md-4 ">
-        <h5>Ensemble</h5>
+      <div class="col-md-5 ">
+        <h5 class="text-center">Ensemble</h5>
         <ul>
           <li>Description : An ensemble of all fruits in one fruit basket. Both acidic and basic fruits.</li>
           <li>Price : Kshs. 800</li>
           <li>Contact Information : 0799 210035</li>
-
-          <button onclick="order();">Order now </button>
-
+          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
         </ul>
       </div>
     </div>
-
-<hr>
-
   </div>
-
-
 {% endblock content %}    
 
-{% block script %}
 
-<script type="text/javascript">
 
-  function order() {
-    swal({
-              title: "Order succesfully placed!",
-              text: "Your order was sent to the vendor!Vendor will reach out to you within 24 hrs/Call the number listed!",
-              icon: "success",
-              button: "Thank you and come again!",
-            });
-    
-
-  } 
-</script>
-   
-  {% endblock %}

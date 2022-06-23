@@ -5,7 +5,7 @@
   <div class="container">
        <div class="col-md-12 mt-3">
         <br>
-          <h1 class="text-center" style="font-size: 25px"> Clothes</h1>
+          <h1 class="" style="font-size: 40px"> Clothes</h1>
         </div>
          <hr>
       <div class="row" style=" border-bottom: 1px solid white">
@@ -34,16 +34,16 @@
                     </div>
                     <div class="col-md-6" style="border-left: 1px solid black;border-radius: 10px;">
                         <div class="portfolio-content">
-                            <h3 class="subtitle fw-bold text-dark" >Clothes Details   <span style="float: right"></span></h3>
+                            <h3 class="sub fw-bold text-dark" style="color:#0E3642;">Clothes Details</h3>
                             <hr>
                                     <h5 class="subtitle text-dark">Size: {{cloth.size}}</h5>
                                     <h5 class="subtitle text-dark">For: {{cloth.category}}</h5>
                                     <p class="subtitle text-dark"><b>Description:</b> {{cloth.description |safe}}</p>
                             </div>
-                        <br>
+                        
                             <hr>
                             <h4 class="subtitle text-dark"> Owners: {{cloth.owner}} Contacts</h4>
-                            <hr>
+                        
                             <div class="modal-footer" style="display:block;">
                                         <p><span><b>Phone Number:</b></span> {{cloth.email}}</p>
                                         <p><span><b>Address:</b></span>{{cloth.address}}</p>
@@ -57,13 +57,13 @@
             </div>
         </section>
         {% endfor %}
-          <hr>
+        <br>
+        <br>
         <div class="text-center">
-            <button type="button" class="btn btn-lg btn-outline-secondary" style="float: right; border-radius: 20px">
+            <button type="button" class="btn btn-lg btn-success" style="float: right; border-radius: 20px">
                 <a class=" text-dark fs-4 " style="text-decoration: none;" href="{% url 'add_info' %}">Add Clothes</a>      
             </button>     
         </div>
     </div>  
 </div>  
-<br>
 {% endblock %}
