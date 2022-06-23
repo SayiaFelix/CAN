@@ -3,19 +3,20 @@
 {% block content %}
  
   <div class="container">
-     <h3 class="text-dark" style="font-size: 40px"><b>Groceries</b></h3>
+     <h3 style="font-size: 38px;color: #0E3642"><b>Groceries</b></h3>
   <hr>
     <div class="row m-3 p-3">
       <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
         <img src="{% static 'images/vegetables.jpg' %}" alt="clothes">
       </div>
       <div class=" col-md-5 ">
-        <h5 class="text-center"> Vegetables</h5>
+        <h4 class="text-center"> Vegetables</h4>
         <ul>
           <li>Description : All organic vegetables.</li>
           <li>Price : Kshs. 70-300 per kilo.</li>
           <li>Contact Information : 0723 431002</li>
-          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
+          <br>
+          <button type="button" onclick="order();" class="btn btn-outline-info"> Order now</button> 
         </ul>
       </div>
     </div>
@@ -29,7 +30,8 @@
           <li>Description : All types of fruits, apples, bananas etc.</li>
           <li>Price :  Kshs. 70-300 per kilo.</li>
           <li>Contact Information :  0798 435610</li>
-          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
+          <br>
+          <button type="button" onclick="order();" class="btn btn-info"> Order now</button> 
         </ul>
       </div>
       <div class="card col-md-7 mr-0" style="max-width:70rem; margin-top:5px;box-shadow: aquamarine 0px 7px 29px 0px;">
@@ -44,12 +46,13 @@
         <img src="{% static 'images/groceries.jpg' %}" alt="clothes">
       </div>
       <div class="col-md-5 ">
-        <h5 class="text-center">Ensemble</h5>
+        <h4 class="text-center">Ensemble</h4>
         <ul>
           <li>Description : An ensemble of all fruits in one fruit basket. Both acidic and basic fruits.</li>
           <li>Price : Kshs. 800</li>
           <li>Contact Information : 0799 210035</li>
-          <button type="button" onclick="order();" class="btn btn-warning"> Order now</button> 
+          <br>
+          <button type="button" onclick="order();" class="btn btn-outline-info"> Order now</button> 
         </ul>
       </div>
     </div>
