@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ObjectDoesNotExist
 from .models import *
 from .forms import *
@@ -13,7 +12,7 @@ from django.urls import reverse
 def services(request):
     return render(request,"service/services.html")
 
-
+@login_required
 def profile(request,profile_id):
      current_user = request.user
      try:
@@ -23,7 +22,7 @@ def profile(request,profile_id):
       profile = None
      return render(request,"profile/profile.html",{"profile":profile})
 
-
+@login_required
 def update_profile(request):
     current_user = request.user
     if request.method == 'POST':
@@ -44,6 +43,7 @@ def clothes(request):
 
     return render(request, 'service/cloth.html', {"clothes": clothes})
 
+@login_required
 def add_clothes(request):
     current_user = request.user
    
@@ -81,6 +81,7 @@ def motivation(request):
 
     return render(request, 'service/service.html', {"motivation":motivation})
 
+@login_required
 def add_motivation(request):
     current_user = request.user
    
@@ -118,6 +119,7 @@ def medical(request):
 
     return render(request, 'service/medical.html', {"medicalservices":medicalservices})
 
+@login_required
 def add_medical(request):
     current_user = request.user
    
@@ -141,6 +143,7 @@ def add_medical(request):
 
     return render(request, 'service/add_medical.html', {"form":form})
 
+@login_required
 def donate_funds(request):
     current_user = request.user
    
@@ -165,6 +168,7 @@ def donate_funds(request):
 
     return render(request, 'service/donate_fund.html', {"form":form})
 
+@login_required
 def search(request):
     current_user = request.user
     profile = Profile.get_profile()
