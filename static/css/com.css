@@ -199,8 +199,8 @@
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #ccc;
-        color: #0E3642;
+        background-color: #0E3642;
+        color: #F97A3E;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
@@ -209,28 +209,29 @@
     .sidebar a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
-        font-size: 25px;
-        color: #818181;
+        font-size: 18px;
+        color: #f2f7f8;
         display: block;
         transition: 0.3s;
     }
     
     .sidebar a:hover {
-        color: #F1F1F1;
+        font-size: 22px;
+        color: #F97A3E;
     }
     
     .sidebar .closebtn {
         position: absolute;
         top: 0;
         right: 25px;
-        font-size: 30px;
+        font-size: 25px;
         margin-left: 50px;
     }
     
     .openbtn {
         font-size: 17px;
         cursor: pointer;
-        background-color: #F97A3E;
+        background-color: #EC8E3B;
         color: white;
         padding: 10px 15px;
         border: none;
@@ -398,4 +399,11 @@
     
     #call-to-action .block .btn-contact i {
         margin-right: 10px;
+    }
+    
+    #core {
+        font-size: 30px;
+        color: black;
+        font-weight: 400;
+        font-family: 'Cookie', cursive;
     }
