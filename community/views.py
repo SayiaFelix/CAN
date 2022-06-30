@@ -162,5 +162,7 @@ def search(request):
         return render(request,'service/search.html',{"message":message,"profiles":profile,"user":current_user,"username":searched_name})
     else:
         message = "You haven't searched for any username"
-        return render(request,'insta/search.html',{"message":message})
+        return render(request,'service/search.html',{"message":message})
+
+
 
